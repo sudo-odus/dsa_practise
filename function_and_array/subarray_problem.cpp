@@ -12,23 +12,29 @@ int main(){
     for(int i = 0 ; i < n; i++){
         cin>>arr[i];
     }
-    for(int i=0;i<n;i++){
-        // int total_for_this_index=n-i;
-        for(int j=i;j<n;j++){
-            // print from i to j
-            // awesome
-            int k=i;
-            while(k<=j)
-            {
-                cout<<arr[k]<<"\t";
-                k++;
+    
+    // very intresting solution 
+    // one loop for starting character 
+    // one loop for ending character
+    // and one loop for iterating between start and end
+
+    for(int starting_with=0;starting_with<n;starting_with++)
+    {
+        for(int end_character=starting_with;end_character<n;end_character++)
+        {
+            // end_character starts with i because end cannot be before the starting character
+            // ex in abcd
+            // ba cam never be a subarry
+            int iterator=starting_with;
+            while(iterator<=end_character){
+                cout<<arr[iterator]<<"\t";
+                iterator++;
             }
             cout<<endl;
         }
-        // cout<<endl;
-
     }
-    
+
+
     // write your code here
     
 }
